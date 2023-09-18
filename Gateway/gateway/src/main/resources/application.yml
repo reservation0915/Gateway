@@ -46,14 +46,26 @@ spring:
         - id: reservation-service
           uri: "lb://STORE-SERVICE"
           predicates:
-            - Path=/api/v1/store/**
+            - Path=/api/v1/reservation/**
         #결제 서비스
         - id: payment-service
           uri: "lb://MENU-SERVICE"
           predicates:
-            - Path=/api/v1/menu/**
+            - Path=/api/v1/payment/**
 #          filters:
 #            - name: "TokenFilter"
+        #관광명소 서비스
+        - id: TD-service
+          uri: "lb://TD-SERVICE"
+          predicates:
+            - Path=/api/v1/tourdestination/**
+
+        # 관광명소예약 서비스
+        - id: TD-reservation-service
+          uri: "lb://TD-RESERVATION-SERVICE"
+          predicates:
+            - Path=/api/v1/tourdestinationreservation/**
+
 
 eureka:
   instance:
