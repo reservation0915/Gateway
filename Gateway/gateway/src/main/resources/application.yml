@@ -36,7 +36,7 @@ spring:
         - id: find-service
           uri: "lb://FIND-SERVICE"
           predicates:
-            - Path=/api/v1/all/**
+            - Path=/api/v1/find/**
 #          filters:
 #            - name: "TokenFilter"
 #              args:
